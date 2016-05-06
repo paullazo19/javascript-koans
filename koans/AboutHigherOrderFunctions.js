@@ -27,10 +27,10 @@ describe("About Higher Order Functions", function () {
   it("should use 'reduce' to update the same result on each iteration", function () {
     var numbers = [1, 2, 3];
     var reduction = _(numbers).reduce(
-            function(/* result from last call */ memo, /* current */ x) { return memo + x }, /* initial */ 0);
+            function(/* result from last call */memo, /* current */ x) { return memo + x }, /* initial */ 0);
 
-    expect(reduction).toBe(FILL_ME_IN);
-    expect(numbers).toEqual(FILL_ME_IN);
+    expect(reduction).toBe(6);
+    expect(numbers).toEqual([1, 2, 3]);
   });
 
   it("should use 'forEach' for simple iteration", function () {

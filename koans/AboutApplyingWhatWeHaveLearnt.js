@@ -37,21 +37,27 @@ describe("About Applying What We Have Learnt", function() {
 
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", function () {
 
-      /* solve using filter() & all() / any() */
+      var productsICanEat = [];
+        /* solve using filter() & all() / any() */
 
-    var sansNuts = products.filter(function (x) {
-      return x.containsNuts === false;
-    });
 
-    var hasMushrooms = sansNuts.filter(function(x) {
-      return x.ingredients.includes('mushrooms')
-    });
 
-    var productsICanEat = sansNuts.length - hasMushrooms.length;
+      var sansNuts = products.filter(function (product) {
+        return product.containsNuts === false;
+      });
 
-    console.log(productsICanEat);
+      var filteredMushrooms =
+          sansNuts.filter(function(product) {
 
-      expect(productsICanEat).toBe(1);
+        var noMushrooms = product.ingredients.every(function(ingredient){
+          return ingredient != "mushrooms";
+        });
+         if(noMushrooms === true)
+         productsICanEat.push(product);
+
+      });
+
+      expect(productsICanEat.length).toBe(1);
   });
 
   /*********************************************************************************/

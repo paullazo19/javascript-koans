@@ -51,7 +51,7 @@ describe("About Applying What We Have Learnt", function() {
 
     console.log(productsICanEat);
 
-      expect(productsICanEat.length).toBe(undefined);
+      expect(productsICanEat).toBe(1);
   });
 
   /*********************************************************************************/
@@ -107,7 +107,7 @@ describe("About Applying What We Have Learnt", function() {
 console.log(ingredientCount.length)
 
 
-    expect(ingredientCount['mushrooms']).toBe(undefined);
+    expect(ingredientCount.length).toBe(2);
   });
 
   /*********************************************************************************/
